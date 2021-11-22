@@ -33,7 +33,7 @@ public class BoardDAO {
         return 0;
     }
 
-    public static List<BoardVO> selBoardList() {
+    public static List<BoardVO> selBoardList(BoardParamVO param) {
         List<BoardVO> list = new ArrayList();
 
         Connection con = null;
@@ -43,11 +43,14 @@ public class BoardDAO {
                     " FROM t_board A " +
                     " INNER JOIN t_user B " +
                     " ON A.writer = B.iuser " +
-                    " ORDER BY A.iboard DESC ";
+                    " ORDER BY A.iboard DESC " +
+                    " LIMIT ?, ? ";
 
         try {
             con = DbUtils.getCon();
             ps = con.prepareStatement(sql);
+            ps.setInt(1, param.getsIdx());
+            ps.setInt(2, param.getRecordCnt());
             rs = ps.executeQuery();
 
             while (rs.next()) {

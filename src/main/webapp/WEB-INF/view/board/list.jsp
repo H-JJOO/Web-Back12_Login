@@ -54,12 +54,11 @@
             <td><%=vo.getRdt()%></td>
         </tr>
         <% } %>
-        </div>
     </table>
 
-    <div style="display: flex; justify-content: center;">
+    <div style=" margin-top: 20px; display: flex; justify-content: center;">
             <%for (int i = 1; i <= maxPage; i++ ) { %>
-        <span><a href="/board/list?page<%=i%>"><%=i%></a></span>
+                <span><a href="/board/list?page=<%=i%>"><%=i%></a></span>&nbsp;
             <% } %>
 </body>
 </html>

@@ -27,7 +27,7 @@ public class BoardListServlet extends HttpServlet {
         int page = MyUtils.parameterInt(req, "page", 1);
         param.setPage(page);
 
-        List<BoardVO> list = BoardDAO.selBoardList();
+        List<BoardVO> list = BoardDAO.selBoardList(param);
         req.setAttribute("data", list);
         MyUtils.disForward(req, res, "/board/list");
 
