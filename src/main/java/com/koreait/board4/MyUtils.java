@@ -31,7 +31,6 @@ public class MyUtils {
         return parseStringToInt(req.getParameter(key), defVal);
     }
 
-
     public static int parameterInt(HttpServletRequest req, String key) {
         String strVal = req.getParameter(key);
         int intVal = parseStringToInt(strVal);
