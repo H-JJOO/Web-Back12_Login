@@ -26,7 +26,7 @@ public class BoardDelServlet extends HttpServlet {
             return;
         }
 
-        int iboard = MyUtils.parameterInt(req, "iboard");
+        int iboard = MyUtils.getParameterInt(req, "iboard");
 
         BoardVO param = new BoardVO();
 

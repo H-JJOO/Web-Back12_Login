@@ -15,7 +15,7 @@ import java.io.IOException;
 public class BoardDetailServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        int iboard = MyUtils.parameterInt(req, "iboard");
+        int iboard = MyUtils.getParameterInt(req, "iboard");
 
         BoardVO param = new BoardVO();
 

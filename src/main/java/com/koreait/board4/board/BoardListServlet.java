@@ -24,7 +24,7 @@ public class BoardListServlet extends HttpServlet {
         int data = BoardDAO.selMaxPage(param);
         req.setAttribute("maxPage", data);
 
-        int page = MyUtils.parameterInt(req, "page", 1);
+        int page = MyUtils.getParameterInt(req, "page", 1);
         param.setPage(page);
 
         List<BoardVO> list = BoardDAO.selBoardList(param);

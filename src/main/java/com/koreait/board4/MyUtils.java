@@ -27,11 +27,11 @@ public class MyUtils {
         }
     }
 
-    public static int parameterInt(HttpServletRequest req, String key, int defVal) {
+    public static int getParameterInt(HttpServletRequest req, String key, int defVal) {
         return parseStringToInt(req.getParameter(key), defVal);
     }
 
-    public static int parameterInt(HttpServletRequest req, String key) {
+    public static int getParameterInt(HttpServletRequest req, String key) {
         String strVal = req.getParameter(key);
         int intVal = parseStringToInt(strVal);
         return intVal;

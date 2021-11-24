@@ -21,7 +21,7 @@ public class BoardModServlet extends HttpServlet {
         }
 
         if (req.getAttribute("data") == null) {
-            int iboard = MyUtils.parameterInt(req, "iboard");
+            int iboard = MyUtils.getParameterInt(req, "iboard");
             BoardVO param = new BoardVO();
             param.setIboard(iboard);
             BoardVO data = BoardDAO.selBoardDetail(param);
@@ -33,7 +33,7 @@ public class BoardModServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        int iboard = MyUtils.parameterInt(req, "iboard");
+        int iboard = MyUtils.getParameterInt(req, "iboard");
         String title = req.getParameter("title");
         String ctnt = req.getParameter("ctnt");
 
