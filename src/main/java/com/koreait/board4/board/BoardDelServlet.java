@@ -49,9 +49,4 @@ public class BoardDelServlet extends HttpServlet {
 
 
     }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-
-    }
 }
